@@ -43,6 +43,11 @@ CREATE TABLE Servicio(idServ int identity(1,1),
 CREATE TABLE TipoUser(idTipoUser numeric(5),
     nombre varchar(30),
     Constraint PK_TipoUser primary Key (idTipoUser))
+
+insert into TipoUser(idTipoUser,nombre) values(1,'Administrador')
+insert into TipoUser(idTipoUser,nombre) values(2,'Proveedor')
+insert into TipoUser(idTipoUser,nombre) values(3,'Organizador')
+
  
 CREATE TABLE Usuario(idUsuario int identity(1,1),
     username varchar(30),
@@ -97,3 +102,4 @@ CREATE TABLE Calificacion(idCalificacion int identity(1,1),
     constraint pk_calif primary key (idCalificacion),
     constraint fk_calO foreign key (idOrganizador) references Organizador(idOrganizador),
     constraint fk_calP foreign key (idProveedor) references Proveedor(idProveedor))
+
