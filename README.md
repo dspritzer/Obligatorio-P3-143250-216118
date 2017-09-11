@@ -102,4 +102,33 @@ CREATE TABLE Calificacion(idCalificacion int identity(1,1),
     constraint pk_calif primary key (idCalificacion),
     constraint fk_calO foreign key (idOrganizador) references Organizador(idOrganizador),
     constraint fk_calP foreign key (idProveedor) references Proveedor(idProveedor))
+    
+    CREATE Procedure [dbo].[InsertarProveedor]
+
+@RUT nvarchar(12),
+@pass varchar(30),
+@Nombre nvarchar(30),
+@email nvarchar(50),
+@telefono nvarchar(10),
+@FechaIni Date,
+@VIP bit
+
+As
+Begin
+
+insert into Usuario(username,pass,idTipoUser)
+
+values(@RUT,@pass,2)
+
+Declare @iduser numeric(5)
+
+set @iduser = (Select idUsuario from Usuario where username = @RUT)
+
+insert into Proveedor(idUsuario,RUT,nombreFantasia,email, telefono,fechaReg,activo,VIP)
+
+values(@iduser,@RUT,@Nombre,@email,@telefono,@FechaIni,1,@VIP)
+
+SELECT CAST (SCOPE_IDENTITY() AS INT)
+
+END
 
