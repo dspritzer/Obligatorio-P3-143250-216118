@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{3112AC49-3B6D-41EE-BE16-9E359FC32E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{92A54779-AD0A-420F-91E3-AC008E1A0445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{6EA03F39-3A1D-4316-9600-40B8A09FECCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3112AC49-3B6D-41EE-BE16-9E359FC32E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3112AC49-3B6D-41EE-BE16-9E359FC32E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3112AC49-3B6D-41EE-BE16-9E359FC32E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3112AC49-3B6D-41EE-BE16-9E359FC32E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A54779-AD0A-420F-91E3-AC008E1A0445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A54779-AD0A-420F-91E3-AC008E1A0445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A54779-AD0A-420F-91E3-AC008E1A0445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A54779-AD0A-420F-91E3-AC008E1A0445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA03F39-3A1D-4316-9600-40B8A09FECCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA03F39-3A1D-4316-9600-40B8A09FECCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA03F39-3A1D-4316-9600-40B8A09FECCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA03F39-3A1D-4316-9600-40B8A09FECCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
