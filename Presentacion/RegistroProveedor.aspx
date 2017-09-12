@@ -67,7 +67,7 @@
             <td>
                 VIP:
             </td>
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
             <td>
 
                 <asp:DropDownList ID="ddlVIP" runat="server">
