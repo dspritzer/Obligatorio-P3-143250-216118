@@ -15,8 +15,8 @@ namespace Presentacion
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            ActiveRecord<Proveedor>.StringConexion = ConfigurationManager.ConnectionStrings["Miconexion"].ConnectionString;
-            ActiveRecord<Servicio>.StringConexion = ConfigurationManager.ConnectionStrings["Miconexion"].ConnectionString;
+            ActiveRecord<Proveedor>.StringConexion = ConfigurationManager.ConnectionStrings["MiconDaniel"].ConnectionString;
+            ActiveRecord<Servicio>.StringConexion = ConfigurationManager.ConnectionStrings["MiconDaniel"].ConnectionString;
         }
 
         protected void Session_Start(object sender, EventArgs e)

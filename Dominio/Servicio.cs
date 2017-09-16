@@ -21,19 +21,19 @@ namespace Dominio
             this.listaDeEventos = lista;
         }
 
-        public bool Insertar()
+        public override bool Insertar()
         {
             SqlConnection cn = new SqlConnection();
 
             return true;
         }
 
-        public bool Eliminar()
+        public override bool Eliminar()
         {
             return true;
         }
 
-        public bool Modificar()
+        public override bool Modificar()
         {
             return true;
         }

@@ -25,7 +25,7 @@ namespace Persistencia
         public abstract bool Insertar();
         public abstract bool Eliminar();
         public abstract bool Modificar();
-
+        public abstract bool Leer();
 
 
     }

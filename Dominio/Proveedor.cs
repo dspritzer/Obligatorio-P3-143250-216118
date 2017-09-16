@@ -97,22 +97,35 @@ namespace Dominio
             return ret;
         }
 
-        public bool Insertar()
+        public override bool Insertar()
         {
             SqlConnection cn = null;
             
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["MiCon"].ConnectionString;
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConDaniel"].ConnectionString;
+            cn = new SqlConnection(cadenaConexion);
+            cn.Open();
+            
+            SqlTransaction tran = cn.BeginTransaction();
             try
             {
-                cn = new SqlConnection(cadenaConexion);
+                SqlCommand cmnd = new SqlCommand();
+                cmnd.CommandType = CommandType.StoredProcedure;
+                cmnd.CommandText = "InsertarUsuario";
+                cmnd.Connection = cn;
+                cmnd.Parameters.AddWithValue
+                    ("@RUT", this.RUT);
+                cmnd.Parameters.AddWithValue
+                    ("@pass", this.pass);
+                cmnd.Parameters.AddWithValue
+                    ("@TipoUser", 2);
+                cmnd.Transaction = tran;
+                cmnd.ExecuteNonQuery();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "InsertarProveedor";
                 cmd.Connection = cn;
                 cmd.Parameters.AddWithValue
                     ("@RUT", this.RUT);
-                cmd.Parameters.AddWithValue
-                    ("@pass", this.pass);
                 cmd.Parameters.AddWithValue
                     ("@Nombre", this.Nombre);
                 cmd.Parameters.AddWithValue
@@ -123,35 +136,83 @@ namespace Dominio
                     ("@FechaIni", this.FechaIni);
                 cmd.Parameters.AddWithValue
                     ("@VIP", this.VIP);
-                cn.Open();
+                SqlParameter par = new SqlParameter();
+                par.ParameterName = "@provid";
+                par.SqlDbType = SqlDbType.Int;
+                par.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(par);
+                cmd.Transaction = tran;
                 cmd.ExecuteNonQuery();
-                //    trn = cn.BeginTransaction();
-                //       cmd.Transaction = trn;
-                
-                
-                //      trn.Commit();
+                tran.Commit();
+                this.Id = (int)par.Value;             
                 return true;
             }
             catch (Exception ex)
             {
                 System.Diagnostics.
                     Debug.Assert(false, "Error: " + ex.Message);
-                //      trn.Rollback();
+                      tran.Rollback();
                 return false;
             }
             finally { cn.Close(); cn.Dispose(); }
         }
 
-        public bool Eliminar()
+        public override bool Eliminar()
         {
             throw new NotImplementedException();
         }
 
-        public bool Modificar()
+        public override bool Modificar()
         {
             throw new NotImplementedException();
         }
+        public override bool Leer()
+        {
+            bool retorno = false;
+            SqlConnection con = null;
+            SqlDataReader reader = null;
+            try
+            {
+                string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConDaniel"].ConnectionString;
+                con = new SqlConnection(cadenaConexion);
+                SqlCommand cmd = new SqlCommand("ProveedorPorId", con);
+                reader = cmd.ExecuteReader();
 
+                if (reader.Read())
+                {
+                    this.Nombre = reader["Nombre"].ToString();
+                    this.Precio = reader.GetDecimal(2);
+                    retorno = true;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open) con.Close();
+                if (reader != null) reader.Close();
+            }
+
+            return retorno;
+        }
+
+        public static Proveedor BuscarProveeodr(string rut)
+        {
+            Proveedor p = new Proveedor();
+
+            Proveedor ret = null;
+
+            p.Id = id;
+
+            if (p.Leer())
+            {
+                ret = p;
+            }
+
+            return ret;
+        }
 
     }
 }
