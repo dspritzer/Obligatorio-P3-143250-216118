@@ -18,7 +18,8 @@ namespace Presentacion
         protected void btnMostrarProv_Click(object sender, EventArgs e)
         {
             grvMostrarProv.Visible = true;
-            grvMostrarProv.DataSource = Proveedor.ListarProveedores();
+            Proveedor p = new Proveedor();
+            grvMostrarProv.DataSource = p.ListarTodos();
             grvMostrarProv.DataBind();
         }
     }

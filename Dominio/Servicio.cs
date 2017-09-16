@@ -43,6 +43,11 @@ namespace Dominio
             return true;
         }
 
+        public override List<Servicio> ListarTodos()
+        {
+            return null;
+        }
+
 
     }
 }

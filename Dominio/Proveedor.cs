@@ -209,5 +209,45 @@ namespace Dominio
             return ret;
         }
 
+        public override List<Proveedor> ListarTodos()
+        {
+            List<Proveedor> lista = new List<Proveedor>();
+
+            SqlConnection con = null;
+            SqlDataReader reader = null;
+
+            try
+            {
+                string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConDaniel"].ConnectionString;
+                con = new SqlConnection(cadenaConexion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Proveedor", con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Proveedor prov = new Proveedor();
+                    
+                    prov.RUT = reader["RUT"].ToString();
+                    prov.Leer();
+                    lista.Add(prov);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.
+                    Debug.Assert(false, "Error: " + ex.Message);
+                
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open) con.Close();
+                if (reader != null) reader.Close();
+            }
+
+            return lista;
+        }
+
     }
 }
