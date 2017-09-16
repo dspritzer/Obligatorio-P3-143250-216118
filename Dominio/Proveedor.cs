@@ -43,11 +43,15 @@ namespace Dominio
             
         }
 
+        public Proveedor()
+        {
+        }
+
         public static DataSet ListarProveedores()
         {
             SqlConnection cn = null;
             DataSet ret = new DataSet();
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["MiCon"].ConnectionString;
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConDaniel"].ConnectionString;
             try
             {
                 cn = new SqlConnection(cadenaConexion);
@@ -70,29 +74,11 @@ namespace Dominio
             return ret;
         }
 
-        public static DataSet UltimoProv()
+        public static List<Proveedor> UltimoProv(string i)
         {
-            SqlConnection cn = null;
-            DataSet ret = new DataSet();
-            string cadenaConexion = ConfigurationManager.ConnectionStrings["MiCon"].ConnectionString;
-            try
-            {
-                cn = new SqlConnection(cadenaConexion);
-                SqlCommand cmd = new SqlCommand("Select * from Proveedor where idUsuario = (select max(idUsuario) from Proveedor)", cn);
-                cn.Open();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(ret);
+            List<Proveedor> ret = new List<Proveedor>();
 
-
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.
-                    Debug.Assert(false, "Error: " + ex.Message);
-                //      trn.Rollback();
-
-            }
-            finally { cn.Close(); cn.Dispose(); }
+            ret.Add(BuscarProveeodr(i));
 
             return ret;
         }
@@ -137,7 +123,7 @@ namespace Dominio
                 cmd.Parameters.AddWithValue
                     ("@VIP", this.VIP);
                 SqlParameter par = new SqlParameter();
-                par.ParameterName = "@provid";
+                par.ParameterName = "@idprov";
                 par.SqlDbType = SqlDbType.Int;
                 par.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(par);
@@ -176,18 +162,27 @@ namespace Dominio
                 string cadenaConexion = ConfigurationManager.ConnectionStrings["MiConDaniel"].ConnectionString;
                 con = new SqlConnection(cadenaConexion);
                 SqlCommand cmd = new SqlCommand("ProveedorPorId", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RUT", this.RUT);
+                con.Open();
                 reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    this.Nombre = reader["Nombre"].ToString();
-                    this.Precio = reader.GetDecimal(2);
+                    
+                    this.Id = (int)reader["idProveedor"];
+                    this.Nombre = reader["nombreFantasia"].ToString();
+                    this.email = reader["email"].ToString();
+                    this.telefono = reader["telefono"].ToString();
+                    this.FechaIni = reader.GetDateTime(reader.GetOrdinal("fechaReg"));
+                    this.VIP = reader.GetBoolean(reader.GetOrdinal("VIP"));
+                    
                     retorno = true;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                System.Diagnostics.Debug.Assert(false, "Error: " + ex.Message); ;
             }
             finally
             {
@@ -204,7 +199,7 @@ namespace Dominio
 
             Proveedor ret = null;
 
-            p.Id = id;
+            p.RUT = rut;
 
             if (p.Leer())
             {

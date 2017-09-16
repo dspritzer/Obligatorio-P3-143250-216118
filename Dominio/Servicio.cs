@@ -38,6 +38,11 @@ namespace Dominio
             return true;
         }
 
-        
+        public override bool Leer()
+        {
+            return true;
+        }
+
+
     }
 }

@@ -39,7 +39,7 @@ namespace Presentacion
 
                 grvNuevoProv.Visible = true;
 
-                grvNuevoProv.DataSource = Proveedor.UltimoProv();
+                grvNuevoProv.DataSource = Proveedor.UltimoProv(rut);
                 grvNuevoProv.DataBind();
 
             }else
