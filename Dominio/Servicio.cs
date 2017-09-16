@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Dominio
 {
-    public class Servicio:IActiveRecord
+    public class Servicio: ActiveRecord<Servicio>
     {
         public string descripcion { set; get; }
         public string foto { set; get; }

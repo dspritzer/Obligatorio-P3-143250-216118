@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public interface IActiveRecord
+    public interface IActiveRecord<T>
     {
+
         bool Insertar();
         bool Eliminar();
         bool Modificar();

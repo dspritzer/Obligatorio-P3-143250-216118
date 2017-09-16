@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Dominio
 {
-    public class Proveedor:IActiveRecord
+    public class Proveedor: ActiveRecord<Proveedor>
 
     {
         public int Id { get; set; }
