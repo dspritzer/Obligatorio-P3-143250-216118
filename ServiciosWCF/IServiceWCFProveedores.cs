@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Dominio;
 
 namespace ServiciosWCF
 {
@@ -15,6 +16,6 @@ namespace ServiciosWCF
     {
 
         [OperationContract]
-        DataSet ObtenerTodos();
+        List<Proveedor> ObtenerTodos();
     }
 }

@@ -15,9 +15,10 @@ namespace ServiciosWCF
     {
         
 
-        public DataSet ObtenerTodos()
+        public List<Proveedor> ObtenerTodos()
         {
-            DataSet lista = Proveedor.ListarProveedores();
+            Proveedor p = new Proveedor();
+            List<Proveedor> lista = p.ListarTodos();
             return lista;
         }
     }
