@@ -1,10 +1,13 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Persistencia;
 using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 
 namespace Dominio
 {
@@ -45,9 +48,33 @@ namespace Dominio
 
         public override List<Servicio> ListarTodos()
         {
-            return null;
+            List<Servicio> a = null;
+            return a;
         }
 
+        public static DataSet ListarCatalogo()
+        {
+            SqlConnection cn = null;
+            DataSet ret = new DataSet();
+            string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
+            try
+            {
+                cn = new SqlConnection(cadenaConexion);
+                SqlCommand cmd = new SqlCommand("Select * from Servicios", cn);
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ret);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.
+                Debug.Assert(false, "Error: " + ex.Message);
+                //trn.Rollback();
 
+            }
+            finally { cn.Close(); cn.Dispose(); }
+
+            return ret;
+        }
     }
 }

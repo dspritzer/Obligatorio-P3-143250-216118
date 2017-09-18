@@ -76,6 +76,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -101,6 +103,34 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PagMaestra.Master" />
+    <Content Include="Properties\DataSources\Dominio.Proveedor.datasource" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Service References\ServiceServicios\ServiceWCFServicios.wsdl" />
+    <None Include="Service References\ServiceServicios\ServiceWCFServicios.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceServicios\ServiceWCFServicios1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceServicios\ServiceWCFServicios2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ServiceWCFProveedores.wsdl" />
+    <None Include="Service References\Services\ServiceWCFProveedores.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ServiceWCFProveedores1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ServiceWCFProveedores2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ServiceWCFProveedores3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Services\ServiceWCFProveedores4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,7 +140,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RegistroProveedor.aspx" />
-    <Content Include="Web.config" />
+    <None Include="Service References\Services\ServiceWCFProveedores.disco" />
+    <None Include="Service References\Services\configuration91.svcinfo" />
+    <None Include="Service References\Services\configuration.svcinfo" />
+    <None Include="Service References\Services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceServicios\ServiceWCFServicios.disco" />
+    <None Include="Service References\ServiceServicios\configuration91.svcinfo" />
+    <None Include="Service References\ServiceServicios\configuration.svcinfo" />
+    <None Include="Service References\ServiceServicios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -138,6 +184,16 @@
     <Compile Include="RegistroProveedor.aspx.designer.cs">
       <DependentUpon>RegistroProveedor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceServicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
@@ -148,6 +204,13 @@
       <Project>{6ea03f39-3a1d-4316-9600-40b8a09fecce}</Project>
       <Name>Persistencia</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceServicios\" />
+    <WCFMetadataStorage Include="Service References\Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
