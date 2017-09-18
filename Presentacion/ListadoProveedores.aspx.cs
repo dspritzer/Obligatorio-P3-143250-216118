@@ -21,11 +21,13 @@ namespace Presentacion
             grvMostrarProv.Visible = true;
             Proveedor p = new Proveedor();
             grvMostrarProv.DataSource = p.ListarTodos();
+
             grvMostrarProv.DataBind();*/
 
             Services.ServiceWCFProveedoresClient cliente = new Services.ServiceWCFProveedoresClient();
             cliente.Open();
             grvMostrarProv.DataSource = cliente.ObtenerTodos();
+
             grvMostrarProv.DataBind();
 
         }
