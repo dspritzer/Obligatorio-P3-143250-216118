@@ -72,3 +72,5 @@ C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Prese
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.dll
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\ServiciosWCF.dll
+C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\ServiciosWCF.pdb

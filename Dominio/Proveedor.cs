@@ -51,9 +51,7 @@ namespace Dominio
         {
             SqlConnection cn = null;
             DataSet ret = new DataSet();
-
             string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
-
             try
             {
                 cn = new SqlConnection(cadenaConexion);
@@ -88,10 +86,8 @@ namespace Dominio
         public override bool Insertar()
         {
             SqlConnection cn = null;
-            
 
             string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
-
             cn = new SqlConnection(cadenaConexion);
             cn.Open();
             
@@ -163,9 +159,7 @@ namespace Dominio
             SqlDataReader reader = null;
             try
             {
-
                 string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
-
                 con = new SqlConnection(cadenaConexion);
                 SqlCommand cmd = new SqlCommand("ProveedorPorId", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -226,7 +220,6 @@ namespace Dominio
             {
 
                 string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
-
                 con = new SqlConnection(cadenaConexion);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select * from Proveedor", con);

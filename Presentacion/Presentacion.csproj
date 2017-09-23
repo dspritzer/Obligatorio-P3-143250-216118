@@ -204,6 +204,10 @@
       <Project>{6ea03f39-3a1d-4316-9600-40b8a09fecce}</Project>
       <Name>Persistencia</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiciosWCF\ServiciosWCF.csproj">
+      <Project>{d5cba483-8dc5-416c-abb2-e079fc8b148d}</Project>
+      <Name>ServiciosWCF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

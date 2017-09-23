@@ -26,7 +26,16 @@ namespace Presentacion
 
             Services.ServiceWCFProveedoresClient cliente = new Services.ServiceWCFProveedoresClient();
             cliente.Open();
-            grvMostrarProv.DataSource = cliente.ObtenerTodos();
+            try
+            {
+                grvMostrarProv.DataSource = cliente.ObtenerTodos();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.
+                    Debug.Assert(false, "Error: " + ex.Message);
+
+            }
 
             grvMostrarProv.DataBind();
 
