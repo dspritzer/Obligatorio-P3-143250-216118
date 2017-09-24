@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,11 @@ namespace ServiciosWCF
 
         [OperationContract]
         DataSet ObtenerTodos();
+
+        [OperationContract]
+        Proveedor ObtenerPorRut(string rut);
+
+        [OperationContract]
+        bool AltaProveedor(string RUT, string Nombre, string email, string Telefono, DateTime FechaIni, bool VIP, string pass);
     }
 }

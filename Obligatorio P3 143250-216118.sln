@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{3112AC49-3B6D-41EE-BE16-9E359FC32E49}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{92A54779-AD0A-420F-91E3-AC008E1A0445}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5CBA483-8DC5-416C-ABB2-E079FC8B148D} = {D5CBA483-8DC5-416C-ABB2-E079FC8B148D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{6EA03F39-3A1D-4316-9600-40B8A09FECCE}"
 EndProject
