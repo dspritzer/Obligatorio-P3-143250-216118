@@ -24,20 +24,20 @@ namespace Presentacion
 
             grvMostrarProv.DataBind();*/
 
-            Services.ServiceWCFProveedoresClient cliente = new Services.ServiceWCFProveedoresClient();
-            cliente.Open();
-            try
-            {
-                grvMostrarProv.DataSource = cliente.ObtenerTodos();
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.
-                    Debug.Assert(false, "Error: " + ex.Message);
+            //Services.ServiceWCFProveedoresClient cliente = new Services.ServiceWCFProveedoresClient();
+            //cliente.Open();
+            //try
+            //{
+            //    grvMostrarProv.DataSource = cliente.ObtenerTodos();
+            //}
+            //catch (Exception ex)
+            //{
+            //    System.Diagnostics.
+            //        Debug.Assert(false, "Error: " + ex.Message);
 
-            }
+            //}
 
-            grvMostrarProv.DataBind();
+            //grvMostrarProv.DataBind();
 
         }
     }

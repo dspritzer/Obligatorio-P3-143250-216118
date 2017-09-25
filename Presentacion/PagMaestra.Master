@@ -22,6 +22,8 @@
                     <asp:MenuItem NavigateUrl="~/RegistroProveedor.aspx" Text="Registrar Proveedor" Value="Mantener Rematadores"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/ListadoProveedores.aspx" Text="Listar Proveedores" Value="Nuevo Lote"></asp:MenuItem>
                     
+                    <asp:MenuItem NavigateUrl="~/DesactivarProveedor.aspx" Text="Desactivar Proveedor" Value="Desactivar Proveedor"></asp:MenuItem>
+                    
                 </Items>
                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
                 <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

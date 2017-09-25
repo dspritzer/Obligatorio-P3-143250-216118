@@ -67,7 +67,7 @@
             <td>
                 VIP:
             </td>
-            <%--<asp:Button ID="Button1" runat="server" Text="Button" />--%>
+
             <td>
 
                 <asp:DropDownList ID="ddlVIP" runat="server">
@@ -77,7 +77,53 @@
 
             </td>
         </tr>
-        
+        <tr>
+            <td>
+                Servicio ofrecido:
+            </td>
+
+            <td>
+
+                <asp:TextBox ID="txtNomServ" runat="server"></asp:TextBox>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tipo de Servicio:
+            </td>
+
+            <td>
+
+                <asp:DropDownList ID="ddlTipoServ" runat="server" DataValueField="Id">
+                   
+                </asp:DropDownList>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Foto:
+            </td>
+
+            <td>
+
+                <asp:FileUpload ID="fuFotoServicio" runat="server" />
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Descripcion:
+            </td>
+
+            <td>
+
+                <asp:TextBox ID="txtDescServ" runat="server"></asp:TextBox>
+
+            </td>
+        </tr>
+                
     </table>
     <br />
     <asp:Button ID="Registrar" runat="server" Text="Ingresar Proveedor" OnClick="Registrar_Click" />

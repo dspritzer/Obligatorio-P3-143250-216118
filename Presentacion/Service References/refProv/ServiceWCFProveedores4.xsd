@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+  <xs:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ServiciosWCF" />
+  <xs:element name="ObtenerTodos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dominio" minOccurs="0" name="ObtenerTodosResult" nillable="true" type="q1:ArrayOfProveedor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="rut" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="vip" type="xs:boolean" />
+        <xs:element minOccurs="0" name="passw" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nomserv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descserv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tiposerv" type="xs:int" />
+        <xs:element minOccurs="0" name="fotoserv" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarTiposServ">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarTiposServResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ServiciosWCF" minOccurs="0" name="listarTiposServResult" nillable="true" type="q2:ArrayOfDTOTipoServicio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarTiposEvPorServ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarTiposEvPorServResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ServiciosWCF" minOccurs="0" name="listarTiposEvPorServResult" nillable="true" type="q3:ArrayOfDTOTipoEvento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leerServicio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leerServicioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ServiciosWCF" minOccurs="0" name="leerServicioResult" nillable="true" type="q4:DTOServicio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leerTipoServicio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leerTipoServicioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ServiciosWCF" minOccurs="0" name="leerTipoServicioResult" nillable="true" type="q5:DTOTipoServicio" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leerTipoEvento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leerTipoEventoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ServiciosWCF" minOccurs="0" name="leerTipoEventoResult" nillable="true" type="q6:DTOTipoEvento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="desactivarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="desactivarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="desactivarProveedorResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

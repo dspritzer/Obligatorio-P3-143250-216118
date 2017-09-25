@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceWCFProveedores" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dominio" />
+      <xsd:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Persistencia" />
+      <xsd:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ServiciosWCF" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceWCFProveedores_ObtenerTodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_ObtenerTodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTodosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_insertar_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertar" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_insertar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_listarTiposServ_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarTiposServ" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_listarTiposServ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarTiposServResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_listarTiposEvPorServ_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarTiposEvPorServ" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_listarTiposEvPorServ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarTiposEvPorServResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_leerServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:leerServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_leerServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:leerServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_leerTipoServicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:leerTipoServicio" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_leerTipoServicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:leerTipoServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_leerTipoEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:leerTipoEvento" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_leerTipoEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:leerTipoEventoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_desactivarProveedor_InputMessage">
+    <wsdl:part name="parameters" element="tns:desactivarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_desactivarProveedor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:desactivarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceWCFProveedores">
+    <wsdl:operation name="ObtenerTodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/ObtenerTodos" message="tns:IServiceWCFProveedores_ObtenerTodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/ObtenerTodosResponse" message="tns:IServiceWCFProveedores_ObtenerTodos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/insertar" message="tns:IServiceWCFProveedores_insertar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/insertarResponse" message="tns:IServiceWCFProveedores_insertar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTiposServ">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/listarTiposServ" message="tns:IServiceWCFProveedores_listarTiposServ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/listarTiposServResponse" message="tns:IServiceWCFProveedores_listarTiposServ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTiposEvPorServ">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/listarTiposEvPorServ" message="tns:IServiceWCFProveedores_listarTiposEvPorServ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/listarTiposEvPorServResponse" message="tns:IServiceWCFProveedores_listarTiposEvPorServ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="leerServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/leerServicio" message="tns:IServiceWCFProveedores_leerServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/leerServicioResponse" message="tns:IServiceWCFProveedores_leerServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="leerTipoServicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/leerTipoServicio" message="tns:IServiceWCFProveedores_leerTipoServicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/leerTipoServicioResponse" message="tns:IServiceWCFProveedores_leerTipoServicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="leerTipoEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/leerTipoEvento" message="tns:IServiceWCFProveedores_leerTipoEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/leerTipoEventoResponse" message="tns:IServiceWCFProveedores_leerTipoEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="desactivarProveedor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/desactivarProveedor" message="tns:IServiceWCFProveedores_desactivarProveedor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/desactivarProveedorResponse" message="tns:IServiceWCFProveedores_desactivarProveedor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceWCFProveedores" type="tns:IServiceWCFProveedores">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerTodos">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/ObtenerTodos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertar">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/insertar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTiposServ">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/listarTiposServ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTiposEvPorServ">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/listarTiposEvPorServ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leerServicio">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/leerServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leerTipoServicio">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/leerTipoServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leerTipoEvento">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/leerTipoEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desactivarProveedor">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/desactivarProveedor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceWCFProveedores">
+    <wsdl:port name="BasicHttpBinding_IServiceWCFProveedores" binding="tns:BasicHttpBinding_IServiceWCFProveedores">
+      <soap:address location="http://localhost:18344/ServiceWCFProveedores.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

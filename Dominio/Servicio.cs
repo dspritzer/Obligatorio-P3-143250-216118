@@ -13,15 +13,18 @@ namespace Dominio
 {
     public class Servicio: ActiveRecord<Servicio>
     {
+        public int Id { get; set; }
+
+        public string Nombre { get; set; }
         public string descripcion { set; get; }
         public string foto { set; get; }
-        public List<TipoEvento> listaDeEventos { set; get; }
-
-        public Servicio(string desc,string foto,List<TipoEvento> lista)
+        public TipoServicio tiposerv { set; get; }
+        public Proveedor prov { get; set; }
+        public Servicio(string desc,string foto, TipoServicio tserv)
         {
             this.descripcion = desc;
             this.foto = foto;
-            this.listaDeEventos = lista;
+            this.tiposerv = tserv;
         }
 
         public override bool Insertar()

@@ -17,5 +17,20 @@ namespace ServiciosWCF
 
         [OperationContract]
         List<Proveedor> ObtenerTodos();
+
+        [OperationContract]
+        bool insertar(string rut, string nombre, string mail, string tel, DateTime fecha, bool vip, string passw, string nomserv, string descserv, int tiposerv, string fotoserv);
+        [OperationContract]
+        List<DTOTipoServicio> listarTiposServ();
+        [OperationContract]
+        List<DTOTipoEvento> listarTiposEvPorServ(int id);
+        [OperationContract]
+        DTOServicio leerServicio(int id);
+        [OperationContract]
+        DTOTipoServicio leerTipoServicio(int id);
+        [OperationContract]
+        DTOTipoEvento leerTipoEvento(int id);
+        [OperationContract]
+        bool desactivarProveedor(int id);
     }
 }

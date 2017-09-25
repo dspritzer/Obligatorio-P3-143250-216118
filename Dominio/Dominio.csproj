@@ -45,6 +45,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Servicio.cs" />
     <Compile Include="TipoEvento.cs" />
+    <Compile Include="TipoServicio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Persistencia\Persistencia.csproj">

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Persistencia" />
+  <xs:import schemaLocation="http://localhost:18344/ServiceWCFProveedores.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Persistencia" />
+  <xs:complexType name="ArrayOfProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proveedor" nillable="true" type="tns:Proveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProveedor" nillable="true" type="tns:ArrayOfProveedor" />
   <xs:complexType name="Proveedor">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Persistencia" base="q1:ActiveRecordOfProveedorkMUe2phu">

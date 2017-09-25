@@ -67,6 +67,42 @@ namespace Presentacion {
         protected global::System.Web.UI.WebControls.DropDownList ddlVIP;
         
         /// <summary>
+        /// txtNomServ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomServ;
+        
+        /// <summary>
+        /// ddlTipoServ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoServ;
+        
+        /// <summary>
+        /// fuFotoServicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuFotoServicio;
+        
+        /// <summary>
+        /// txtDescServ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescServ;
+        
+        /// <summary>
         /// Registrar control.
         /// </summary>
         /// <remarks>
