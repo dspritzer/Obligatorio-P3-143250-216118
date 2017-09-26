@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
-using Presentacion.refProv;
+using Presentacion.ServiceReference1;
 
 namespace Presentacion
 {
@@ -19,7 +19,7 @@ namespace Presentacion
 
         protected void Registrar_Click(object sender, EventArgs e)
         {
-            refProv.ServiceWCFProveedoresClient client = new refProv.ServiceWCFProveedoresClient();
+            ServiceWCFProveedoresClient client = new ServiceWCFProveedoresClient();
             client.Open();
             string rut = txtRUT.Text;
             string nombre = txtNombreFantasia.Text;
@@ -38,9 +38,8 @@ namespace Presentacion
                 vip = true;
             }
 
-            
 
-            client.Open();
+
 
             //DS: una vez llenados todos los datos. comenzamos con el alta.
             //DS: creamos la variable que verifique que el archivo es una foto.
@@ -78,8 +77,8 @@ namespace Presentacion
 
                 grvNuevoProv.Visible = true;
 
-                grvNuevoProv.DataSource = Proveedor.UltimoProv(rut);
-                grvNuevoProv.DataBind();
+                //grvNuevoProv.DataSource = client.leerProveedor();
+                //grvNuevoProv.DataBind();
 
             }else
             {
@@ -89,13 +88,24 @@ namespace Presentacion
 
         public List<TipoServicio> listserv()
         {
-            refProv.ServiceWCFProveedoresClient client = new refProv.ServiceWCFProveedoresClient();
+            ServiceWCFProveedoresClient client = new ServiceWCFProveedoresClient();
             client.Open();
 
             List<TipoServicio> listserv = new List<TipoServicio>();
+
+            List<DTOTipoServicio> ls = client.listarTiposServ().ToList();
             
-            //List<DTOTipoServicio> ls = client.listarTiposServ();
-            
+            foreach(DTOTipoServicio ds in ls)
+            {
+                TipoServicio ts = new TipoServicio();
+                ts.Nombre = ds.Nombre;
+                ts.Id = ds.Id;
+                listserv.Add(ts);
+            }
+
+            ddlTipoServ.DataSource = listserv;
+            ddlTipoServ.DataBind();
+
 
             return listserv;
         }

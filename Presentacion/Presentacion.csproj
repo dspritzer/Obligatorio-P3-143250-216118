@@ -99,6 +99,7 @@
     <Content Include="DesactivarProveedor.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListadoProveedores.aspx" />
+    <Content Include="ModificarParametros.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -109,20 +110,26 @@
     <Content Include="Properties\DataSources\ServiciosWCF.DTOServicio.datasource" />
     <Content Include="Properties\DataSources\ServiciosWCF.DTOTipoEvento.datasource" />
     <Content Include="Properties\DataSources\ServiciosWCF.DTOTipoServicio.datasource" />
-    <None Include="Service References\refProv\ServiceWCFProveedores.wsdl" />
-    <None Include="Service References\refProv\ServiceWCFProveedores.xsd">
+    <Content Include="Service References\ServiceReference1\Presentacion.ServiceReference1.DTOServicio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Presentacion.ServiceReference1.DTOTipoEvento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Presentacion.ServiceReference1.DTOTipoServicio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\Presentacion.ServiceReference1.DTOProveedor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ServiceReference1\ServiceWCFProveedores.wsdl" />
+    <None Include="Service References\ServiceReference1\ServiceWCFProveedores.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\refProv\ServiceWCFProveedores1.xsd">
+    <None Include="Service References\ServiceReference1\ServiceWCFProveedores1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\refProv\ServiceWCFProveedores2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\refProv\ServiceWCFProveedores3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\refProv\ServiceWCFProveedores4.xsd">
+    <None Include="Service References\ServiceReference1\ServiceWCFProveedores2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -134,10 +141,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RegistroProveedor.aspx" />
-    <None Include="Service References\refProv\ServiceWCFProveedores.disco" />
-    <None Include="Service References\refProv\configuration91.svcinfo" />
-    <None Include="Service References\refProv\configuration.svcinfo" />
-    <None Include="Service References\refProv\Reference.svcmap">
+    <None Include="Service References\ServiceReference1\ServiceWCFProveedores.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -163,6 +170,13 @@
     <Compile Include="ListadoProveedores.aspx.designer.cs">
       <DependentUpon>ListadoProveedores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModificarParametros.aspx.cs">
+      <DependentUpon>ModificarParametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarParametros.aspx.designer.cs">
+      <DependentUpon>ModificarParametros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagMaestra.Master.cs">
       <DependentUpon>PagMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -178,7 +192,7 @@
     <Compile Include="RegistroProveedor.aspx.designer.cs">
       <DependentUpon>RegistroProveedor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\refProv\Reference.cs">
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -193,16 +207,12 @@
       <Project>{6ea03f39-3a1d-4316-9600-40b8a09fecce}</Project>
       <Name>Persistencia</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ServiciosWCF\ServiciosWCF.csproj">
-      <Project>{d5cba483-8dc5-416c-abb2-e079fc8b148d}</Project>
-      <Name>ServiciosWCF</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\refProv\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

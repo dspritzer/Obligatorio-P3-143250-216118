@@ -95,7 +95,7 @@
 
             <td>
 
-                <asp:DropDownList ID="ddlTipoServ" runat="server" DataValueField="Id">
+                <asp:DropDownList ID="ddlTipoServ" runat="server" DataValueField="Id" DataTextField="Nombre">
                    
                 </asp:DropDownList>
 

@@ -7,20 +7,15 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
-
-
-namespace ServiciosWCF
+namespace ServicesWCF
 {
     [DataContract]
-    public class DTOTipoServicio
+    public class DTOTipoEvento
     {
         [DataMember]
         public int Id { get; set; }
         [DataMember]
         public string Nombre { get; set; }
-        [DataMember]
-        public List<DTOTipoEvento> listaEventos { get; set; }        
-
+        
     }
-   
 }

@@ -24,6 +24,8 @@
                     
                     <asp:MenuItem NavigateUrl="~/DesactivarProveedor.aspx" Text="Desactivar Proveedor" Value="Desactivar Proveedor"></asp:MenuItem>
                     
+                    <asp:MenuItem NavigateUrl="~/ModificarParametros.aspx" Text="Modificar Parametros" Value="Modificar Parametros"></asp:MenuItem>
+                    
                 </Items>
                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
                 <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

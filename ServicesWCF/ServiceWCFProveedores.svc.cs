@@ -1,4 +1,4 @@
-﻿using Dominio;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,19 +10,14 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace ServiciosWCF
+namespace ServicesWCF
 {
     [DataContract]
     public class ServiceWCFProveedores : IServiceWCFProveedores
     {
 
 
-        public List<Proveedor> ObtenerTodos()
-        {
-            Proveedor p = new Proveedor();
-            List<Proveedor> lista = p.ListarTodos();
-            return lista;
-        }
+        
 
         public bool insertar(string rut, string nombre, string mail, string tel, DateTime fecha, bool vip, string passw, string nomserv, string descserv, int tiposerv, string fotoserv)
         {
@@ -77,11 +72,12 @@ namespace ServiciosWCF
                 cmd.ExecuteNonQuery();
                 SqlCommand cmm = new SqlCommand("InsertarServicio", cn);
                 cmm.CommandType = CommandType.StoredProcedure;
-                cmm.Parameters.AddWithValue("@NombreServ", s.Nombre);
-                cmm.Parameters.AddWithValue("@TipoServ", s.tipoServ.Id);
+                cmm.Parameters.AddWithValue("@Nombre", s.Nombre);
+                cmm.Parameters.AddWithValue("@TipoServ", leerTipoServicio(tiposerv).Id);
                 cmm.Parameters.AddWithValue("@Desc", s.Descripcion);
                 cmm.Parameters.AddWithValue("@foto", s.foto);
                 cmm.Parameters.AddWithValue("@idprov", par.Value);
+                cmm.Transaction = tran;
                 cmm.ExecuteNonQuery();
                 tran.Commit();
                 p.Id = (int)par.Value;
@@ -122,8 +118,8 @@ namespace ServiciosWCF
                 {
                     DTOTipoServicio ts = new DTOTipoServicio();
 
-                    ts.Id = Convert.ToInt32(reader["idTipoServicio"].ToString());
-                    leerTipoServicio(ts.Id);
+                    int id = Convert.ToInt32(reader["idTipoServicio"].ToString());
+                    ts = leerTipoServicio(id);
                     lista.Add(ts);
                 }
 
@@ -199,11 +195,12 @@ namespace ServiciosWCF
                 if (reader.Read())
                 {
 
-                    s.Id = (int)reader["idProveedor"];
+                    s.Id = (int)reader["idServicio"];
                     s.Nombre = reader["nombre"].ToString();
                     s.foto = reader["foto"].ToString();
                     s.Descripcion = reader["descripcion"].ToString();
                     s.tipoServ = leerTipoServicio((int)reader["idTipoServ"]);
+                    s.prov = leerProveedor((int)reader["idprov"]);
 
 
                 }
@@ -220,7 +217,50 @@ namespace ServiciosWCF
 
             return s;
         }
+        public DTOProveedor leerProveedor(int id)
+        {
+            DTOProveedor s = new DTOProveedor();
+            s.Id = id;
 
+
+            SqlConnection con = null;
+            SqlDataReader reader = null;
+            try
+            {
+                string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
+                con = new SqlConnection(cadenaConexion);
+                SqlCommand cmd = new SqlCommand("ProveedorPorId", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", s.Id);
+                con.Open();
+                reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+
+                    s.Id = (int)reader["idProveedor"];
+                    s.RUT = reader["RUT"].ToString();
+                    s.Nombre = reader["nombreFantasia"].ToString();
+                    s.email = reader["email"].ToString();
+                    s.telefono = reader["telefono"].ToString();
+                    s.FechaIni = reader.GetDateTime(reader.GetOrdinal("fechaReg"));
+                    s.VIP = reader.GetBoolean(reader.GetOrdinal("VIP"));
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Assert(false, "Error: " + ex.Message); ;
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open) con.Close();
+                if (reader != null) reader.Close();
+            }
+
+            return s;
+        }
         public DTOTipoServicio leerTipoServicio(int id)
         {
             DTOTipoServicio ts = new DTOTipoServicio();
@@ -233,7 +273,7 @@ namespace ServiciosWCF
             {
                 string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
                 con = new SqlConnection(cadenaConexion);
-                SqlCommand cmd = new SqlCommand("ServicioPorId", con);
+                SqlCommand cmd = new SqlCommand("TipoServPorId", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", ts.Id);
                 con.Open();
@@ -383,6 +423,48 @@ namespace ServiciosWCF
             }
 
             return ret;
+        }
+
+        public List<DTOProveedor> devolverProveedores()
+        {
+            List<DTOProveedor> lista = new List<DTOProveedor>();
+
+            
+            SqlConnection con = null;
+            SqlDataReader reader = null;
+
+            try
+            {
+
+                string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
+                con = new SqlConnection(cadenaConexion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Proveedor", con);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DTOProveedor ts = new DTOProveedor();
+
+                    int Id = Convert.ToInt32(reader["idProveedor"].ToString());
+                    ts = leerProveedor(Id);
+                    lista.Add(ts);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.
+                    Debug.Assert(false, "Error: " + ex.Message);
+
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open) con.Close();
+                if (reader != null) reader.Close();
+            }
+
+            return lista;
         }
 
     }

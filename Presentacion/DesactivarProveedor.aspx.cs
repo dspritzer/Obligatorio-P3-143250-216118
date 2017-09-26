@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Presentacion.refProv;
+using Presentacion.ServiceReference1;
 
 namespace Presentacion
 {
@@ -17,7 +17,7 @@ namespace Presentacion
 
         protected void btnDesactivar_Click(object sender, EventArgs e)
         {
-            refProv.ServiceWCFProveedoresClient prox = new refProv.ServiceWCFProveedoresClient();
+            ServiceWCFProveedoresClient prox = new ServiceWCFProveedoresClient();
             int id = Convert.ToInt32(txtidprov.Text);
             prox.desactivarProveedor(id);
         }

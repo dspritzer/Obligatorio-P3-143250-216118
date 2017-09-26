@@ -9,7 +9,7 @@ using System.Data;
 
 
 
-namespace ServiciosWCF
+namespace ServicesWCF
 {
     [DataContract]
     public class DTOTipoServicio
