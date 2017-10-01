@@ -502,6 +502,24 @@ namespace Presentacion.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/devolverProveedores", ReplyAction="http://tempuri.org/IServiceWCFProveedores/devolverProveedoresResponse")]
         System.Threading.Tasks.Task<Presentacion.ServiceReference1.DTOProveedor[]> devolverProveedoresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/buscarUsuario", ReplyAction="http://tempuri.org/IServiceWCFProveedores/buscarUsuarioResponse")]
+        System.Data.DataTable buscarUsuario(string name, string pass);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/buscarUsuario", ReplyAction="http://tempuri.org/IServiceWCFProveedores/buscarUsuarioResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> buscarUsuarioAsync(string name, string pass);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/Decryptdata", ReplyAction="http://tempuri.org/IServiceWCFProveedores/DecryptdataResponse")]
+        string Decryptdata(string encryptpwd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/Decryptdata", ReplyAction="http://tempuri.org/IServiceWCFProveedores/DecryptdataResponse")]
+        System.Threading.Tasks.Task<string> DecryptdataAsync(string encryptpwd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/Encryptdata", ReplyAction="http://tempuri.org/IServiceWCFProveedores/EncryptdataResponse")]
+        string Encryptdata(string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/Encryptdata", ReplyAction="http://tempuri.org/IServiceWCFProveedores/EncryptdataResponse")]
+        System.Threading.Tasks.Task<string> EncryptdataAsync(string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -617,6 +635,30 @@ namespace Presentacion.ServiceReference1 {
         
         public System.Threading.Tasks.Task<Presentacion.ServiceReference1.DTOProveedor[]> devolverProveedoresAsync() {
             return base.Channel.devolverProveedoresAsync();
+        }
+        
+        public System.Data.DataTable buscarUsuario(string name, string pass) {
+            return base.Channel.buscarUsuario(name, pass);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> buscarUsuarioAsync(string name, string pass) {
+            return base.Channel.buscarUsuarioAsync(name, pass);
+        }
+        
+        public string Decryptdata(string encryptpwd) {
+            return base.Channel.Decryptdata(encryptpwd);
+        }
+        
+        public System.Threading.Tasks.Task<string> DecryptdataAsync(string encryptpwd) {
+            return base.Channel.DecryptdataAsync(encryptpwd);
+        }
+        
+        public string Encryptdata(string password) {
+            return base.Channel.Encryptdata(password);
+        }
+        
+        public System.Threading.Tasks.Task<string> EncryptdataAsync(string password) {
+            return base.Channel.EncryptdataAsync(password);
         }
     }
 }

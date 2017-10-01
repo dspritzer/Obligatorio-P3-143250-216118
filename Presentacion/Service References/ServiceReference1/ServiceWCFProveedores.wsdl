@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicesWCF" />
+      <xsd:import schemaLocation="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServiceWCFProveedores_insertar_InputMessage">
@@ -73,6 +74,24 @@
   <wsdl:message name="IServiceWCFProveedores_devolverProveedores_OutputMessage">
     <wsdl:part name="parameters" element="tns:devolverProveedoresResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_buscarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:buscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_buscarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:buscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_Decryptdata_InputMessage">
+    <wsdl:part name="parameters" element="tns:Decryptdata" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_Decryptdata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DecryptdataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_Encryptdata_InputMessage">
+    <wsdl:part name="parameters" element="tns:Encryptdata" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_Encryptdata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptdataResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceWCFProveedores">
     <wsdl:operation name="insertar">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/insertar" message="tns:IServiceWCFProveedores_insertar_InputMessage" />
@@ -117,6 +136,18 @@
     <wsdl:operation name="devolverProveedores">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/devolverProveedores" message="tns:IServiceWCFProveedores_devolverProveedores_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/devolverProveedoresResponse" message="tns:IServiceWCFProveedores_devolverProveedores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/buscarUsuario" message="tns:IServiceWCFProveedores_buscarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/buscarUsuarioResponse" message="tns:IServiceWCFProveedores_buscarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Decryptdata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/Decryptdata" message="tns:IServiceWCFProveedores_Decryptdata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/DecryptdataResponse" message="tns:IServiceWCFProveedores_Decryptdata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Encryptdata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/Encryptdata" message="tns:IServiceWCFProveedores_Encryptdata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/EncryptdataResponse" message="tns:IServiceWCFProveedores_Encryptdata_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceWCFProveedores" type="tns:IServiceWCFProveedores">
@@ -213,6 +244,33 @@
     </wsdl:operation>
     <wsdl:operation name="devolverProveedores">
       <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/devolverProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/buscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decryptdata">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/Decryptdata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encryptdata">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/Encryptdata" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

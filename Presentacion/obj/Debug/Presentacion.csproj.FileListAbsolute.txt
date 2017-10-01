@@ -1,40 +1,4 @@
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\ApplicationInsights.config
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\csc.exe
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\vbc.exe
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\VBCSCompiler.exe
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Presentacion.dll.config
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Presentacion.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Presentacion.pdb
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Dominio.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.Web.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.ApplicationInsights.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Persistencia.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Dominio.pdb
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Persistencia.pdb
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.Web.xml
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.ApplicationInsights.xml
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\obj\Debug\Presentacion.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\ApplicationInsights.config
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\roslyn\csc.exe
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -69,6 +33,5 @@ C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Prese
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.dll
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Presentacion\obj\Debug\Presentacion.pdb

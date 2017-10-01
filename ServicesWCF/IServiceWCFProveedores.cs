@@ -39,7 +39,15 @@ namespace ServicesWCF
         DTOProveedor leerProveedor(int id);
         [OperationContract]
         List<DTOProveedor> devolverProveedores();
+        [OperationContract]
+        DataTable buscarUsuario(string name, string pass);
+        [OperationContract]
+        string Decryptdata(string encryptpwd);
+        [OperationContract]
+        string Encryptdata(string password);
     }
+
+
 
     
 }

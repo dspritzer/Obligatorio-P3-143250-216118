@@ -23,7 +23,8 @@ namespace Presentacion
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            Session["usuario"] = "";
+            Session["tipoUser"] = "";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

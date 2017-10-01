@@ -23,7 +23,7 @@ namespace ServicesWCF
         {
 
 
-            DTOProveedor p = new DTOProveedor(rut, nombre, mail, tel, fecha, vip, passw);
+            DTOProveedor p = new DTOProveedor(rut, nombre, mail, tel, fecha, vip, Encryptdata(passw));
             DTOServicio s = new DTOServicio(nomserv, descserv, tiposerv, fotoserv);
 
             SqlConnection cn = null;
@@ -467,5 +467,44 @@ namespace ServicesWCF
             return lista;
         }
 
+
+        public DataTable buscarUsuario(string name, string pass)
+        {
+            DataTable dt_SignUp = new DataTable();
+            if (pass == "admin")
+            {
+                SqlDataAdapter c1 = new SqlDataAdapter("select * from Usuario where username = '" + name + "' and pass = '" + pass + "'", ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString);
+                c1.Fill(dt_SignUp);
+            }
+            else
+            {
+
+                SqlDataAdapter c1 = new SqlDataAdapter("select * from Usuario where username = '" + name + "' and pass = '" + Encryptdata(pass), ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString);
+                c1.Fill(dt_SignUp);
+            }
+            
+            return dt_SignUp;
+        }
+
+        public string Encryptdata(string password)
+        {
+            string strmsg = string.Empty;
+            byte[] encode = new byte[password.Length];
+            encode = Encoding.UTF8.GetBytes(password);
+            strmsg = Convert.ToBase64String(encode);
+            return strmsg;
+        }
+        public string Decryptdata(string encryptpwd)
+        {
+            string decryptpwd = string.Empty;
+            UTF8Encoding encodepwd = new UTF8Encoding();
+            Decoder Decode = encodepwd.GetDecoder();
+            byte[] todecode_byte = Convert.FromBase64String(encryptpwd);
+            int charCount = Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+            char[] decoded_char = new char[charCount];
+            Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+            decryptpwd = new String(decoded_char);
+            return decryptpwd;
+        }
     }
 }

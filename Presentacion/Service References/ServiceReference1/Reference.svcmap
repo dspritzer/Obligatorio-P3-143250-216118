@@ -23,9 +23,10 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="ServiceWCFProveedores.xsd" MetadataType="Schema" ID="ad78eaba-37a5-4d9c-b247-4e17e1eecef5" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceWCFProveedores1.xsd" MetadataType="Schema" ID="6e361945-8fc7-4cb6-9890-c262c11f2aad" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd2" />
     <MetadataFile FileName="ServiceWCFProveedores.disco" MetadataType="Disco" ID="c02e10c4-ae01-4caa-a5bc-15b3bcd5a86c" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?disco" />
     <MetadataFile FileName="ServiceWCFProveedores.wsdl" MetadataType="Wsdl" ID="72eefbd7-ac79-4a80-a366-a80ed8f32147" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?wsdl" />
-    <MetadataFile FileName="ServiceWCFProveedores1.xsd" MetadataType="Schema" ID="6e361945-8fc7-4cb6-9890-c262c11f2aad" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceWCFProveedores3.xsd" MetadataType="Schema" ID="565126a6-cf91-469d-864b-e9df3dfd9b00" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd3" />
     <MetadataFile FileName="ServiceWCFProveedores2.xsd" MetadataType="Schema" ID="2e6b6600-72d8-4e19-a321-69b95f5c2166" SourceId="1" SourceUrl="http://localhost:1723/ServiceWCFProveedores.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>

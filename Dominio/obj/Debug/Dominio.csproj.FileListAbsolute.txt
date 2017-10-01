@@ -1,10 +1,3 @@
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\bin\Debug\Dominio.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\bin\Debug\Dominio.pdb
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\bin\Debug\Persistencia.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\bin\Debug\Persistencia.pdb
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\obj\Debug\Dominio.dll
-C:\Users\Dynamo\Desktop\Nueva carpeta (2)\Obligatorio P3 143250-216118\Obligatorio-P3-143250-216118-master\Dominio\obj\Debug\Dominio.pdb
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Dominio\bin\Debug\Dominio.dll
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Dominio\bin\Debug\Dominio.pdb
 C:\Users\Daniel\Desktop\OBLIGATORIO P3\GitHub\Obligatorio-P3-143250-216118\Dominio\bin\Debug\Persistencia.dll
