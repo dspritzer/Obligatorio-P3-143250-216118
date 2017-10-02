@@ -9,6 +9,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace ServicesWCF
 {
@@ -509,11 +510,11 @@ namespace ServicesWCF
             return decryptpwd;
         }
 
-        public void provATexto()
+        public bool provATexto()
         {
             SqlConnection con = null;
             SqlDataReader reader = null;
-
+            bool ret = false;
             try
             {
 
@@ -525,31 +526,104 @@ namespace ServicesWCF
                 
                 while (reader.Read())
                 {
-                    DTOProveedor ts = new DTOProveedor();
-
+                    string linea = "";
+                    string rut = reader["RUT"].ToString();
+                    string nf = reader["nombreFantasia"].ToString();
+                    string email = reader["email"].ToString();
+                    string tel = reader["telefono"].ToString();
+                    linea = rut + "#" + nf + "#" + email + "#" + tel + "|";
                     int Id = Convert.ToInt32(reader["idProveedor"].ToString());
-                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\proveedores.txt"))
+                    SqlCommand cd = new SqlCommand("Select * from Servicio where idProv = "+Id, con);
+                    SqlDataReader rdr = cd.ExecuteReader();
+                    while (rdr.Read())
                     {
-
+                        string nom = rdr["nombre"].ToString();
+                        string desc = rdr["descripcion"].ToString();
+                        string foto = rdr["foto"].ToString();
+                        linea += nom+":"+desc + ":" +foto;
+                        linea += "#";
+                    }
+                        using (StreamWriter file = new StreamWriter(@"C:\DBCT\servicios.txt", true))
+                    {
+                        file.WriteLine(linea);
                     }
                 }
+                ret = true;
             }
             catch (Exception ex)
             {
                 System.Diagnostics.
                     Debug.Assert(false, "Error: " + ex.Message);
-
+                ret = false;
             }
             finally
             {
                 if (con != null && con.State == ConnectionState.Open) con.Close();
                 if (reader != null) reader.Close();
+                
             }
-
+            return ret;
         }
-        public void servATexto()
+        public bool servATexto()
         {
+            SqlConnection con = null;
+            SqlDataReader reader = null;
+            bool ret = false;
+            try
+            {
 
+                string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
+                con = new SqlConnection(cadenaConexion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("TextoServicios", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                reader = cmd.ExecuteReader();
+                
+                string aux = "";
+                string linea = "";
+                while (reader.Read())
+                {
+                    string nom = reader[0].ToString();
+                    string ev = reader[1].ToString();
+                    if(nom != aux)
+                    {
+                        using (StreamWriter file = new StreamWriter(@"C:\DBCT\servicios.txt", true))
+                        {
+                            file.WriteLine(linea);
+                            linea = "";
+                        }
+                        linea += nom + "#";
+                        linea += ev;
+                        aux = nom;
+                    }
+                    else
+                    {
+                        linea += ":" + ev;
+                    }
+                    if (!reader.Read())
+                    {
+                        using (StreamWriter file = new StreamWriter(@"C:\DBCT\servicios.txt", true))
+                        {
+                            file.WriteLine(linea);
+                            linea = "";
+                        }
+                    }
+                }
+                ret = true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.
+                    Debug.Assert(false, "Error: " + ex.Message);
+                ret = false;
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open) con.Close();
+                if (reader != null) reader.Close();
+
+            }
+            return ret;
         }
     }
 }

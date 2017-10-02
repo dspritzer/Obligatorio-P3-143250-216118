@@ -96,6 +96,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ArchivosTexto.aspx" />
     <Content Include="DesactivarProveedor.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListadoProveedores.aspx" />
@@ -159,6 +160,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchivosTexto.aspx.cs">
+      <DependentUpon>ArchivosTexto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArchivosTexto.aspx.designer.cs">
+      <DependentUpon>ArchivosTexto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DesactivarProveedor.aspx.cs">
       <DependentUpon>DesactivarProveedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

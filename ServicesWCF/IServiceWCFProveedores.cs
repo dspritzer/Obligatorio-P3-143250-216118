@@ -47,9 +47,9 @@ namespace ServicesWCF
         [OperationContract]
         string Encryptdata(string password);
         [OperationContract]
-        void provATexto();
+        bool provATexto();
         [OperationContract]
-        void servATexto();
+        bool servATexto();
     }
 
 

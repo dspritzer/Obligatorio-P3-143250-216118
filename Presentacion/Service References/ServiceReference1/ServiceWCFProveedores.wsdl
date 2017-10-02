@@ -92,6 +92,18 @@
   <wsdl:message name="IServiceWCFProveedores_Encryptdata_OutputMessage">
     <wsdl:part name="parameters" element="tns:EncryptdataResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_provATexto_InputMessage">
+    <wsdl:part name="parameters" element="tns:provATexto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_provATexto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:provATextoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_servATexto_InputMessage">
+    <wsdl:part name="parameters" element="tns:servATexto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceWCFProveedores_servATexto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:servATextoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceWCFProveedores">
     <wsdl:operation name="insertar">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/insertar" message="tns:IServiceWCFProveedores_insertar_InputMessage" />
@@ -148,6 +160,14 @@
     <wsdl:operation name="Encryptdata">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/Encryptdata" message="tns:IServiceWCFProveedores_Encryptdata_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/EncryptdataResponse" message="tns:IServiceWCFProveedores_Encryptdata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="provATexto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/provATexto" message="tns:IServiceWCFProveedores_provATexto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/provATextoResponse" message="tns:IServiceWCFProveedores_provATexto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="servATexto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceWCFProveedores/servATexto" message="tns:IServiceWCFProveedores_servATexto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceWCFProveedores/servATextoResponse" message="tns:IServiceWCFProveedores_servATexto_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceWCFProveedores" type="tns:IServiceWCFProveedores">
@@ -271,6 +291,24 @@
     </wsdl:operation>
     <wsdl:operation name="Encryptdata">
       <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/Encryptdata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="provATexto">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/provATexto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="servATexto">
+      <soap:operation soapAction="http://tempuri.org/IServiceWCFProveedores/servATexto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

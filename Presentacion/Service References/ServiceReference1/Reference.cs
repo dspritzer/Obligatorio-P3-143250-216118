@@ -520,6 +520,18 @@ namespace Presentacion.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/Encryptdata", ReplyAction="http://tempuri.org/IServiceWCFProveedores/EncryptdataResponse")]
         System.Threading.Tasks.Task<string> EncryptdataAsync(string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/provATexto", ReplyAction="http://tempuri.org/IServiceWCFProveedores/provATextoResponse")]
+        bool provATexto();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/provATexto", ReplyAction="http://tempuri.org/IServiceWCFProveedores/provATextoResponse")]
+        System.Threading.Tasks.Task<bool> provATextoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/servATexto", ReplyAction="http://tempuri.org/IServiceWCFProveedores/servATextoResponse")]
+        bool servATexto();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceWCFProveedores/servATexto", ReplyAction="http://tempuri.org/IServiceWCFProveedores/servATextoResponse")]
+        System.Threading.Tasks.Task<bool> servATextoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -659,6 +671,22 @@ namespace Presentacion.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> EncryptdataAsync(string password) {
             return base.Channel.EncryptdataAsync(password);
+        }
+        
+        public bool provATexto() {
+            return base.Channel.provATexto();
+        }
+        
+        public System.Threading.Tasks.Task<bool> provATextoAsync() {
+            return base.Channel.provATextoAsync();
+        }
+        
+        public bool servATexto() {
+            return base.Channel.servATexto();
+        }
+        
+        public System.Threading.Tasks.Task<bool> servATextoAsync() {
+            return base.Channel.servATextoAsync();
         }
     }
 }

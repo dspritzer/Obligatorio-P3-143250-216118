@@ -26,6 +26,8 @@
                     
                     <asp:MenuItem NavigateUrl="~/ModificarParametros.aspx" Text="Modificar Parametros" Value="Modificar Parametros"></asp:MenuItem>
                     
+                    <asp:MenuItem NavigateUrl="~/ArchivosTexto.aspx" Text="Archivos de Texto" Value="Archivos de Texto"></asp:MenuItem>
+                    
                 </Items>
                 <StaticHoverStyle BackColor="#990000" ForeColor="White" />
                 <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
