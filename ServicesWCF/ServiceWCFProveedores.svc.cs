@@ -17,7 +17,7 @@ namespace ServicesWCF
     {
 
 
-        
+
 
         public bool insertar(string rut, string nombre, string mail, string tel, DateTime fecha, bool vip, string passw, string nomserv, string descserv, int tiposerv, string fotoserv)
         {
@@ -429,7 +429,7 @@ namespace ServicesWCF
         {
             List<DTOProveedor> lista = new List<DTOProveedor>();
 
-            
+
             SqlConnection con = null;
             SqlDataReader reader = null;
 
@@ -482,7 +482,9 @@ namespace ServicesWCF
                 SqlDataAdapter c1 = new SqlDataAdapter("select * from Usuario where username = '" + name + "' and pass = '" + Encryptdata(pass), ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString);
                 c1.Fill(dt_SignUp);
             }
-            
+
+            dt_SignUp.TableName = "usuarios";
+
             return dt_SignUp;
         }
 
@@ -505,6 +507,49 @@ namespace ServicesWCF
             Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
             decryptpwd = new String(decoded_char);
             return decryptpwd;
+        }
+
+        public void provATexto()
+        {
+            SqlConnection con = null;
+            SqlDataReader reader = null;
+
+            try
+            {
+
+                string cadenaConexion = ConfigurationManager.ConnectionStrings["miConDaniel"].ConnectionString;
+                con = new SqlConnection(cadenaConexion);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Proveedor", con);
+                reader = cmd.ExecuteReader();
+                
+                while (reader.Read())
+                {
+                    DTOProveedor ts = new DTOProveedor();
+
+                    int Id = Convert.ToInt32(reader["idProveedor"].ToString());
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\proveedores.txt"))
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.
+                    Debug.Assert(false, "Error: " + ex.Message);
+
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open) con.Close();
+                if (reader != null) reader.Close();
+            }
+
+        }
+        public void servATexto()
+        {
+
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Presentacion
 
         protected void btnModifPorcVIP_Click(object sender, EventArgs e)
         {
-            decimal nuevoPorcVIP = Convert.ToDecimal(txtModArancel.Text);
+            decimal nuevoPorcVIP = Convert.ToDecimal(txtModPorcVIP.Text);
 
             ServiceWCFProveedoresClient prox = new ServiceWCFProveedoresClient();
 

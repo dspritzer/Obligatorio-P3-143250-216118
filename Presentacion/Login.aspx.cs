@@ -24,9 +24,9 @@ namespace Presentacion
 
         protected void Login1_Authenticate1(object sender, AuthenticateEventArgs e)
         {
-            ServiceWCFProveedoresClient prox = new ServiceWCFProveedoresClient();
-            prox.Open();
-            DataTable dt = prox.buscarUsuario(Login1.UserName, Login1.Password);
+            ServiceWCFProveedoresClient client = new ServiceWCFProveedoresClient();
+            client.Open();
+            DataTable dt = client.buscarUsuario(Login1.UserName, Login1.Password);
 
             if (dt.Rows.Count > 0)
             {

@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Data.SqlClient;
 
 
 namespace ServicesWCF
@@ -45,6 +46,10 @@ namespace ServicesWCF
         string Decryptdata(string encryptpwd);
         [OperationContract]
         string Encryptdata(string password);
+        [OperationContract]
+        void provATexto();
+        [OperationContract]
+        void servATexto();
     }
 
 
